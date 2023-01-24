@@ -1,9 +1,16 @@
-# practica-vue-kc
+# Galentine's Day
 
-## Project setup
-```
-npm install
-```
+Assignment for Keepcoding and Glovo's Bootcamp: Women in Tech
+
+Learning VUE and Typescript
+
+
+## How to install 💾
+
+    $ git clone https://github.com/ireneairyn/galentines-day
+    $ cd galentines-day
+    $ npm install
+
 
 ### Compiles and hot-reloads for development
 ```
@@ -20,6 +27,14 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-# galentines-day
+
+## Built With 🛠️
+
+- [Visual Studio Code](https://code.visualstudio.com/) - Code Editor
+
+## Author ✒️
+
+- **Irene Auñón** - [IreneAiryn](https://github.com/IreneAiryn)
+
+
+
