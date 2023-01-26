@@ -1,0 +1,25 @@
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: rgb(113, 104, 104);
+  }
+  
+  nav {
+    padding: 30px;
+  }
+  
+  nav a {
+    font-weight: bold;
+    color: #de2a42;
+  }
+  
+  nav a.router-link-exact-active {
+    color: #de2a42;
+  }
+
+body {
+  background-image: url("../assets/bestgalspink.png");
+  background-size: 100%;
+}

@@ -19,13 +19,14 @@ export default defineComponent({
 })
 </script>
 <style scoped>
+
 form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 10px;
     border: 2px solid #dc5f6f;
-    background-color: #ffedf4;
+    background-color: #fee5f5;
     border-radius: 20px;
     padding: 20px;
 }
@@ -50,6 +51,9 @@ button {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+}
+.logo {
+    padding: 100px;
 }
 
 @media (min-width: 400px) {
