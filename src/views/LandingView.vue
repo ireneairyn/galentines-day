@@ -17,6 +17,7 @@ h1 {
   font-size: 100px;
   word-spacing: 20px;
   font-weight: normal;
+  margin: 30px 0;
 }
 
 h3, h4 {
@@ -34,18 +35,13 @@ h4 {
   margin: 40px;
 }
 
-nav {
-  background-color: white;
-  border: 1px solid #dc5f6f;
-  border-radius: 4px;
-  padding: 20px;
-}
-
-body {
-  background-color: #fee5f5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@media (min-width: 768px) {
+    .question-set {
+        flex-direction: row;
+    }
+    .landing {
+      margin: 150px 0;
+    }
 }
 
 </style>

@@ -6,7 +6,7 @@
     <router-link to="/products">Products</router-link> |
     <router-link to="/cart">Cart</router-link>
   </nav>
-  <div :style="{'background-image':'/src/assets/bestgals.png'}">
-  </div>
-  <router-view/>
+
+  <div :style="{ 'background-image': '/src/assets/bestgals.png' }"></div>
+  <router-view />
 </template>

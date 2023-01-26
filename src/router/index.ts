@@ -32,7 +32,7 @@ const routes: Array<RouteRecordRaw> = [
     // route level code-splitting
     // this generates a separate chunk (products.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "products" */ '../views/ProductsView.vue')
+    component: () => import(/* webpackChunkName: "products" */ '../views/ProductView.vue')
   },
   {
     path: '/cart',

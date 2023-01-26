@@ -3,7 +3,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: rgb(113, 104, 104);
+    color: #de2a42;
   }
   
   nav {
@@ -18,8 +18,45 @@
   nav a.router-link-exact-active {
     color: #de2a42;
   }
+ 
 
 body {
   background-image: url("../assets/bestgalspink.png");
-  background-size: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
+  background-color: #fce7f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer {
+  color: #de2a42;
+  font-size: small;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 20px;   /* Height of the footer */
+  background: #fbd9ee;
+  padding: 3px;
+}
+
+footer a {
+  color: #810919;
+}
+
+footer a:hover, nav a:hover {
+  color: #fce7f4;
+  background-color: #de2a42;
+}
+
+/*Desktop stuff*/ 
+
+@media (min-width: 400px) {
+  .wrapper {
+      max-width: 600px;
+  }  
 }

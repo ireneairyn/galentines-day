@@ -1,20 +1,17 @@
 <template>
-      <div class="cart">
-    <h1>Goodies for your gals</h1>
+  <div class="cart">
+    <CartPage />
   </div>
 </template>
 
-<style scoped>
-h1 {
-  color: #de2a42;
-  font-family: 'Dr Sugiyama', cursive;
-  font-size: 100px;
-  font-weight: normal;
-}
+<script lang="ts">
+import { defineComponent } from "vue";
+import CartPage from "@/components/CartPage.vue"; // @ is an alias to /src
 
-p {
-  font-family: 'Permanent Marker', cursive;
-  font-weight: normal;
-  color: #de2a42;
-}
-</style>
+export default defineComponent({
+  name: "CartView",
+  components: {
+    CartPage,
+  },
+});
+</script>
