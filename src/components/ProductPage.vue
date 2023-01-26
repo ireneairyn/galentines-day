@@ -8,11 +8,17 @@
 </div>
 </template>
 
-<script>
-import { defineComponent } from '@vue/composition-api'
+<script lang="ts">
+import { defineComponent, PropType } from 'vue'
+import { Product } from '../models/product'
 
 export default defineComponent({
-  setup () {},
+    props: {
+        product:{
+            type: Object as PropType<Product>,
+            required: true,
+        }
+    },
 })
 </script>
 

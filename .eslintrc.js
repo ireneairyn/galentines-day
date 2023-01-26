@@ -3,9 +3,9 @@ module.exports = {
   env: {
     node: true
   },
-  extends: [
+  'extends': [
     'plugin:vue/vue3-essential',
-    '@vue/standard',
+    'eslint:recommended',
     '@vue/typescript/recommended'
   ],
   parserOptions: {
@@ -16,3 +16,4 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
   }
 }
+
