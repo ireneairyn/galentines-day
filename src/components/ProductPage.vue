@@ -1,25 +1,45 @@
 <template>
-<div>
-          <h1>Presents</h1>
-  <p>It's a SPECIAL day!</p>
-  <p>Get something for your GALS</p>
-  <p>and don't forget to</p>
-  <p>TREAT YOURSELF too!</p>
-</div>
+  <div>
+    <h1>Presents</h1>
+    <p>It's a special day!</p>
+    <p>Get something for your <span>gals</span>, and don't forget to</p>
+
+    <p><span>treat yourself</span> too!</p>
+  </div>
+
+  <div class="products">
+    <div v-for="(product, index) in products" :key="index">
+      <div
+        class="product"
+        :style="{ backgroundImage: `url(${product.images[0]})` }"
+      >
+        <div class="title">{{ product.title }}</div>
+        <div class="price">{{ product.price }} EUR</div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
-import { Product } from '../models/product'
+import axios from "axios";
 
-export default defineComponent({
-    props: {
-        product:{
-            type: Object as PropType<Product>,
-            required: true,
-        }
+export default {
+  created() {
+    axios
+      .get("https://api.escuelajs.co/api/v1/products")
+      .then((response) => (this.products = response.data));
+  },
+  data() {
+    return {
+      products: [],
+    };
+  },
+  methods: {
+    changeRender() {
+      this.render = !this.render;
     },
-})
+  },
+};
 </script>
 
 <style scoped>
@@ -32,10 +52,54 @@ h1 {
 }
 
 p {
-  font-family: "Permanent Marker", cursive;
+  font-size: 25px;
+  font-family: "Marck Script", cursive;
   font-weight: normal;
   color: #de2a42;
+  margin: 10px;
 }
+
+span {
+  font-weight: bold;
+}
+
+.products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.product {
+  position: relative;
+  padding: 10px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 200px;
+  width: 200px;
+  text-align: left;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  border-radius: 10px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 16px;
+}
+
+.price {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 20px;
+}
+
 @media (min-width: 600px) {
   p {
     font-size: 27px;
@@ -43,6 +107,13 @@ p {
   h1 {
     font-size: 100px;
     word-spacing: 20px;
+  }
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
   }
 }
 </style>
