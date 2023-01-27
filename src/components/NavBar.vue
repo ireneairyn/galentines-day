@@ -5,12 +5,13 @@
     <router-link to="/cart">Cart</router-link> |
     <router-link to="/about">About</router-link> |
     <router-link to="/landing">Extra</router-link> |
-    <router-link to="/">Logout</router-link>
+    <button @click="logout">Logout</button>
   </nav>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
+import useAuthUser from "../composables/useAuthUser";
 
 interface NavbarProps {
   title: string;
@@ -19,6 +20,21 @@ interface NavbarProps {
 
 export default defineComponent({
   name: "NavBar",
+  setup() {
+    const { deleteToken } = useAuthUser();
+    const email = ref("");
+    const password = ref("");
+    const logout = () => {
+      console.log("logout")
+      deleteToken();
+    };
+
+    return {
+      email,
+      password,
+      logout,
+    };
+  },
   props: {
     title: {
       type: String,
