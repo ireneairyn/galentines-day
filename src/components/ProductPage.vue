@@ -15,7 +15,7 @@
     />
   </div>
   <div class="products">
-    <div v-for="(product, index) in products" :key="index">
+    <div v-for="(product, index) in filteredProducts" :key="index">
       <div
         class="product"
         :style="{ backgroundImage: `url(${product.images[0]})` }"
@@ -28,19 +28,29 @@
 </template>
 
 <script lang="ts">
+import { Product } from "@/models/product";
 import axios from "axios";
 import { defineComponent } from "vue";
 
+declare interface Data {
+  products: Product[];
+  filteredProducts: Product[];
+  searchTerm: string;
+}
+
+
 export default defineComponent({
   created() {
-    axios
-      .get("https://api.escuelajs.co/api/v1/products")
-      .then((response) => (this.products = response.data));
+    axios.get("https://api.escuelajs.co/api/v1/products").then((response) => {
+      this.products = response.data;
+      this.filteredProducts = response.data;
+    });
   },
-  data() {
+  data(): Data {
     return {
       products: [],
-      searchTerm: '',
+      filteredProducts: [],
+      searchTerm: "",
     };
   },
   // methods: {
@@ -48,13 +58,13 @@ export default defineComponent({
   //     this.render = !this.render;
   //   },
   // },
-methods: {
+  methods: {
     search() {
-        if (this.searchTerm.length >= 3) {
-            // Search logic here
-        }
+      this.filteredProducts = this.products.filter((product) =>
+        product.title.toLowerCase().includes(this.searchTerm.toLowerCase())
+      );
     },
-}
+  },
 });
 </script>
 
@@ -117,7 +127,7 @@ span {
 }
 
 .searchbar input {
-width: 350px;
+  width: 350px;
   margin: 10px;
   border: 2px solid #dc5f6f;
   border-radius: 20px;
@@ -139,7 +149,7 @@ width: 350px;
     justify-content: center;
   }
   .searchbar input {
-width: 700px;
+    width: 700px;
   }
 }
 </style>
