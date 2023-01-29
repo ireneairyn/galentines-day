@@ -16,13 +16,15 @@
   </div>
   <div class="products">
     <div v-for="(product, index) in filteredProducts" :key="index">
-      <div
-        class="product"
-        :style="{ backgroundImage: `url(${product.images[0]})` }"
-      >
-        <div class="title">{{ product.title }}</div>
-        <div class="price">{{ product.price }} EUR</div>
-      </div>
+      <CustomCard :img="product.images[0]">
+        <template v-slot:header>
+          <div class="title">{{ product.title }}</div>
+          <div class="description">{{ product.description }}</div>
+        </template>
+        <template v-slot:footer>
+          <div class="price">{{ product.price }} EUR</div>
+        </template>
+      </CustomCard>
     </div>
   </div>
 </template>
@@ -31,6 +33,7 @@
 import { Product } from "@/models/product";
 import axios from "axios";
 import { defineComponent } from "vue";
+import CustomCard from "@/components/CustomCard.vue";
 
 declare interface Data {
   products: Product[];
@@ -39,6 +42,9 @@ declare interface Data {
 }
 
 export default defineComponent({
+  components: {
+    CustomCard,
+  },
   created() {
     axios.get("https://api.escuelajs.co/api/v1/products").then((response) => {
       this.products = response.data;
@@ -102,26 +108,13 @@ span {
   margin-top: 40px;
 }
 
-.product {
-  position: relative;
-  padding: 10px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  height: 200px;
-  width: 200px;
-  text-align: left;
-  color: white;
-  text-shadow: 1px 1px 1px black;
-  border-radius: 10px;
-}
-
 .title {
   font-size: 20px;
   font-weight: bold;
 }
 
 .description {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .price {

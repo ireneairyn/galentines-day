@@ -43,7 +43,7 @@
 import { defineComponent, onBeforeMount, onMounted, ref } from 'vue';
 import useProducts from '../composables/useProducts';
 import NavLinks from "../components/NavLinks.vue";
-import CustomCard from "../components/CustomCard.vue";
+import CustomCard from "../components/CustomCardOld.vue";
 
 export default defineComponent({
     name: 'DetailView',

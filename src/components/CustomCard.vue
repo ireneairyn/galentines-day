@@ -1,30 +1,52 @@
 <template>
-    <div class="card">
-        <slot name="image"></slot>
-        <div class="card-body">
-            <slot name="header"></slot>
-            <slot name="body"></slot>
-            <slot name="footer"></slot>
-        </div>
-    </div>
-
+  <div class="product">
+    <div
+      class="background"
+      :style="{ backgroundImage: `url(${this.img})` }"
+    ></div>
+    <slot name="header"></slot>
+    <slot name="footer"></slot>
+  </div>
 </template>
 
 <script lang="ts">
-    import { defineComponent } from "@vue/runtime-core";
+import { defineComponent } from "vue";
 
-    export default defineComponent({
-        name: 'CustomCard'
-    });
+export default defineComponent({
+  props: {
+    img: {
+      type: String,
+      required: true,
+    },
+  },
+});
 </script>
 
 <style scoped>
-    .card{
-        width: 30rem;
-        min-height:200px;
-        border:1px solid rgb(255, 230, 230);
-        border-radius: 1rem;
-        box-shadow: 0px 10px 10px rgba(65, 14, 14, 0.2);
-        
-    }
+.product {
+  position: relative;
+  padding: 10px;
+  height: 200px;
+  width: 200px;
+  text-align: left;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  border-radius: 10px;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  filter: brightness(0.8) saturate(0.3);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.product:hover .background {
+  filter: brightness(1);
+}
 </style>
