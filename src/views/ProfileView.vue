@@ -3,7 +3,8 @@
     <div v-if="authUser" class="profile">
       <h2 class="card-title">{{ authUser.name }}</h2>
       <p class="card-text">{{ authUser.email }}</p>
-      <img :src="authUser.avatar" class="card-img-top" alt="" />
+      <p class="card-text">{{ authUser.role }}</p>
+      <img :src="authUser.avatar" />
     </div>
     <div v-else>Loading...</div>
   </div>
