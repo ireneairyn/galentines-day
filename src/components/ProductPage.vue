@@ -6,7 +6,14 @@
 
     <p><span>treat yourself</span> too!</p>
   </div>
-
+  <div class="searchbar">
+    <input
+      type="text"
+      v-model="searchTerm"
+      @input="search"
+      placeholder="Search for products"
+    />
+  </div>
   <div class="products">
     <div v-for="(product, index) in products" :key="index">
       <div
@@ -33,6 +40,7 @@ export default defineComponent({
   data() {
     return {
       products: [],
+      searchTerm: '',
     };
   },
   // methods: {
@@ -40,6 +48,13 @@ export default defineComponent({
   //     this.render = !this.render;
   //   },
   // },
+methods: {
+    search() {
+        if (this.searchTerm.length >= 3) {
+            // Search logic here
+        }
+    },
+}
 });
 </script>
 
@@ -101,6 +116,13 @@ span {
   font-size: 20px;
 }
 
+.searchbar input {
+width: 350px;
+  margin: 10px;
+  border: 2px solid #dc5f6f;
+  border-radius: 20px;
+  padding: 10px;
+}
 @media (min-width: 600px) {
   p {
     font-size: 27px;
@@ -115,6 +137,9 @@ span {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+  }
+  .searchbar input {
+width: 700px;
   }
 }
 </style>

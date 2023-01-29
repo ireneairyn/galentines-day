@@ -2,9 +2,6 @@
   <nav>
     <router-link to="/products">Products</router-link> |
     <router-link to="/profile">Profile</router-link> |
-    <router-link to="/cart">Cart</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/extra">Extra</router-link> |
     <button @click="logout">Logout</button>
   </nav>
 </template>
@@ -49,4 +46,16 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped>
+button {
+  background-color: #de2a42;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+</style>
 
