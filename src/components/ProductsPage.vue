@@ -16,15 +16,17 @@
   </div>
   <div class="products">
     <div v-for="(product, index) in filteredProducts" :key="index">
-      <CustomCard :img="product.images[0]">
-        <template v-slot:header>
-          <div class="title">{{ product.title }}</div>
-          <div class="description">{{ product.description }}</div>
-        </template>
-        <template v-slot:footer>
-          <div class="price">{{ product.price }} EUR</div>
-        </template>
-      </CustomCard>
+      <router-link :to="`/product/${product.id}`">
+        <CustomCard :img="product.images[0]">
+          <template v-slot:header>
+            <div class="title">{{ product.title }}</div>
+            <div class="description">{{ product.description }}</div>
+          </template>
+          <template v-slot:footer>
+            <div class="price">{{ product.price }} EUR</div>
+          </template>
+        </CustomCard>
+      </router-link>
     </div>
   </div>
 </template>
@@ -106,6 +108,10 @@ span {
   align-items: center;
   gap: 20px;
   margin-top: 40px;
+}
+
+.products a {
+  text-decoration: none;
 }
 
 .title {

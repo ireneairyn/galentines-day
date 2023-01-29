@@ -27,7 +27,22 @@ const routes: Array<RouteRecordRaw> = [
     // this generates a separate chunk (products.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
+      import(/* webpackChunkName: "products" */ "../views/ProductsView.vue"),
+  },
+
+  {
+    path: "/product/:id",
+    name: "product",
+    beforeEnter: [haveRoleGuard],
+    // route level code-splitting
+    // this generates a separate chunk (products.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
       import(/* webpackChunkName: "products" */ "../views/ProductView.vue"),
+    props: (route) => {
+      const id = Number(route.params.id);
+      return { id: isNaN(id) ? null : id}
+    },
   },
 
   //404 error
