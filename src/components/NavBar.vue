@@ -10,10 +10,6 @@
 import { defineComponent, ref } from "vue";
 import useAuthUser from "../composables/useAuthUser";
 
-interface NavbarProps {
-  title: string;
-  greeting: string;
-}
 
 export default defineComponent({
   name: "NavBar",

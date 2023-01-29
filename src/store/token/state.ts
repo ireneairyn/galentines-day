@@ -1,5 +1,3 @@
-import { AuthUser } from "@/models/authUser";
-
 export interface ITokenState {
     access_token: string | null,
     refresh_token: string | null;

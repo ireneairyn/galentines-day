@@ -1,6 +1,5 @@
 import fakePlatziApi from "@/api/fakePlatziApi";
 import { AuthUser } from "@/models/authUser";
-import { Token } from "@/models/token";
 import { UserRequest } from "@/models/userRequest";
 import router from "@/router";
 import { AxiosResponse } from "axios";
