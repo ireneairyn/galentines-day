@@ -64,6 +64,7 @@ export default defineComponent({
 <style scoped>
 .product {
   display: flex;
+  flex-direction: column;
   gap: 20px;
   max-width: 800px;
   margin: auto;
@@ -101,4 +102,11 @@ export default defineComponent({
   text-align: left;
   flex: 1;
 }
+
+@media (min-width: 600px) {
+  .product{
+    flex-direction: row;
+  }
+}
+
 </style>

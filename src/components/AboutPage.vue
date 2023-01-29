@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>About</h1>
+    <h2>...</h2>
     <div>
       <p>
         <span>Galentine's Day</span> is a nonofficial holiday that is celebrated on <span>February
@@ -29,7 +29,7 @@
 </template>
 
 <style scoped>
-h1 {
+h2 {
   color: #de2a42;
   font-family: "Dr Sugiyama", cursive;
   font-size: 60px;
@@ -63,13 +63,16 @@ span {
   p {
     font-size: 27px;
   }
-  h1 {
-    font-size: 100px;
+  h2 {
+    font-size: 80px;
     word-spacing: 20px;
   }
   iframe {
     width: 560px;
     height: 315px;
+  }
+  .about {
+    margin: 0 0 80px 0;
   }
 }
 </style>

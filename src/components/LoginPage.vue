@@ -1,4 +1,7 @@
 <template>
+<div>
+  <h1>Galentine's Day</h1>
+</div>
   <img class="logo" alt="heart logo" src="../assets/logo.png" />
 
   <div class="tagline">
@@ -38,6 +41,14 @@ export default defineComponent({
 </script>
 
 <style scoped>
+h1 {
+  color: #de2a42;
+  font-family: "Dr Sugiyama", cursive;
+  font-size: 60px;
+  font-weight: normal;
+  margin: 0 0 20px 0;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -86,5 +97,19 @@ button {
 
 span {
   font-weight: bold;
+}
+
+@media (min-width: 600px) {
+  p {
+    font-size: 27px;
+  }
+  h1 {
+    font-size: 100px;
+    word-spacing: 20px;
+  }
+  form {
+  width: 500px;
+  margin: auto;
+  }
 }
 </style>
