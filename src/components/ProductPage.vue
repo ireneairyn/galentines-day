@@ -38,7 +38,6 @@ declare interface Data {
   searchTerm: string;
 }
 
-
 export default defineComponent({
   created() {
     axios.get("https://api.escuelajs.co/api/v1/products").then((response) => {
@@ -60,9 +59,15 @@ export default defineComponent({
   // },
   methods: {
     search() {
-      this.filteredProducts = this.products.filter((product) =>
-        product.title.toLowerCase().includes(this.searchTerm.toLowerCase())
-      );
+      this.filteredProducts = this.products.filter((product) => {
+        if (this.searchTerm.length >= 3) {
+          return product.title
+            .toLowerCase()
+            .includes(this.searchTerm.toLowerCase());
+        } else {
+          return true;
+        }
+      });
     },
   },
 });
