@@ -6,10 +6,10 @@
   </div>
   <form @submit="getToken">
     <label for="email">Email:</label>
-    <input type="email" id="email" v-model="email" />
+    <input type="email" id="email" v-model="email" required/>
     <br />
     <label for="password">Password:</label>
-    <input type="password" id="password" v-model="password" />
+    <input type="password" id="password" v-model="password" required/>
     <br />
     <button type="submit">Login</button>
   </form>
