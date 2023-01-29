@@ -9,7 +9,5 @@ h1 {
   font-size: 60px;
   font-weight: normal;
   position: relative;
-  
 }
-
 </style>

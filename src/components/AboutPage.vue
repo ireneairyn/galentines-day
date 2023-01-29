@@ -3,14 +3,17 @@
     <h2>...</h2>
     <div>
       <p>
-        <span>Galentine's Day</span> is a nonofficial holiday that is celebrated on <span>February
-        13th</span>.
+        <span>Galentine's Day</span> is a nonofficial holiday that is celebrated
+        on <span>February 13th</span>.
       </p>
       <p>
         The tradition was started by Leslie Knope, a character from the TV show
         Parks and Recreation.
       </p>
-      <p>It's all about female friendship. <span>Ladies celebrating ladies</span>.</p>
+      <p>
+        It's all about female friendship.
+        <span>Ladies celebrating ladies</span>.
+      </p>
       <p>Find out more in the video below!</p>
     </div>
 

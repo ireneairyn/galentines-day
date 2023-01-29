@@ -10,7 +10,6 @@
 import { defineComponent, ref } from "vue";
 import useAuthUser from "../composables/useAuthUser";
 
-
 export default defineComponent({
   name: "NavBar",
   setup() {

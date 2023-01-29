@@ -27,6 +27,11 @@ npm run build
 npm run lint
 ```
 
+## Login With ▶️
+
+- email: john@mail.com
+- password: changeme 
+  
 
 ## Built With 🛠️
 

@@ -1,7 +1,7 @@
 <template>
-<div>
-  <h1>Galentine's Day</h1>
-</div>
+  <div>
+    <h1>Galentine's Day</h1>
+  </div>
   <img class="logo" alt="heart logo" src="../assets/logo.png" />
 
   <div class="tagline">
@@ -9,35 +9,35 @@
   </div>
   <form @submit="getToken">
     <label for="email">Email:</label>
-    <input type="email" id="email" v-model="email" required/>
+    <input type="email" id="email" v-model="email" required />
     <br />
     <label for="password">Password:</label>
-    <input type="password" id="password" v-model="password" required/>
+    <input type="password" id="password" v-model="password" required />
     <br />
     <button type="submit">Login</button>
   </form>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
-import useAuthUser from '../composables/useAuthUser'
+import { defineComponent, ref } from "vue";
+import useAuthUser from "../composables/useAuthUser";
 export default defineComponent({
-  setup () {
-    const { fetchToken } = useAuthUser()
-    const email = ref('')
-    const password = ref('')
+  setup() {
+    const { fetchToken } = useAuthUser();
+    const email = ref("");
+    const password = ref("");
     const getToken = () => {
-      console.log("getToken", { email: email.value, password: password.value })
-      fetchToken({ email: email.value, password: password.value })
-    }
+      console.log("getToken", { email: email.value, password: password.value });
+      fetchToken({ email: email.value, password: password.value });
+    };
 
     return {
       email,
       password,
-      getToken
-    }
-  }
-})
+      getToken,
+    };
+  },
+});
 </script>
 
 <style scoped>
@@ -108,8 +108,8 @@ span {
     word-spacing: 20px;
   }
   form {
-  width: 500px;
-  margin: auto;
+    width: 500px;
+    margin: auto;
   }
 }
 </style>

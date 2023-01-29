@@ -104,9 +104,8 @@ export default defineComponent({
 }
 
 @media (min-width: 600px) {
-  .product{
+  .product {
     flex-direction: row;
   }
 }
-
 </style>

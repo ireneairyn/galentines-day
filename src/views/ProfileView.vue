@@ -20,11 +20,11 @@ export default defineComponent({
     const { token, authUser, isLoading, fetchAuthUser } = useAuthUser();
     fetchAuthUser(token.value);
 
-    return{
-      authUser, 
-      isLoading, 
-      fetchAuthUser
-    }
+    return {
+      authUser,
+      isLoading,
+      fetchAuthUser,
+    };
   },
 });
 </script>
