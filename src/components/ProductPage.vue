@@ -22,8 +22,9 @@
 
 <script lang="ts">
 import axios from "axios";
+import { defineComponent } from "vue";
 
-export default {
+export default defineComponent({
   created() {
     axios
       .get("https://api.escuelajs.co/api/v1/products")
@@ -34,12 +35,12 @@ export default {
       products: [],
     };
   },
-  methods: {
-    changeRender() {
-      this.render = !this.render;
-    },
-  },
-};
+  // methods: {
+  //   changeRender() {
+  //     this.render = !this.render;
+  //   },
+  // },
+});
 </script>
 
 <style scoped>

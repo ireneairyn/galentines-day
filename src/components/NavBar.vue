@@ -4,7 +4,7 @@
     <router-link to="/profile">Profile</router-link> |
     <router-link to="/cart">Cart</router-link> |
     <router-link to="/about">About</router-link> |
-    <router-link to="/landing">Extra</router-link> |
+    <router-link to="/extra">Extra</router-link> |
     <button @click="logout">Logout</button>
   </nav>
 </template>
@@ -21,13 +21,14 @@ interface NavbarProps {
 export default defineComponent({
   name: "NavBar",
   setup() {
-    const { deleteToken } = useAuthUser();
+    const { deleteToken, checkToken } = useAuthUser();
     const email = ref("");
     const password = ref("");
     const logout = () => {
-      console.log("logout")
+      console.log("logout");
       deleteToken();
     };
+    checkToken();
 
     return {
       email,
